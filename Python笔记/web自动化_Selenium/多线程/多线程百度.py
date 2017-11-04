@@ -40,7 +40,7 @@ if __name__ == '__main__':
              #'http://127.0.0.1:5555/wd/hub': 'internet explorer'
              #'http://127.0.0.1:6666/wd/hub': 'firefox'  # 远程节点node
     #         }
-    lists = {'http://169.254.55.201:4444/wd/hub': 'chrome'}
+    lists = {'http://127.0.0.1:5555/wd/hub': 'chrome'}
     for host, browser in lists.items():
         baidu(host, browser)
     # threads = []
