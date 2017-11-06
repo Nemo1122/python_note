@@ -8,19 +8,35 @@ import time
 
 def browser():
     """默认以设备Galaxy S5机型的方式打开浏览器，主要用于chrome模拟手机上的H5页面"""
-    mobileEmulation = {'deviceName': 'Galaxy S5'}
+    mobileEmulation = {'deviceName': 'Galaxy Note 3'}
     options = webdriver.ChromeOptions()
+    # options.add_argument(r'--user-data-dir=C:\Users\NemoZhang\AppData\Local\Google\Chrome\User Data')
+    # options.add_argument('--user-agent=Android')
     options.add_experimental_option('mobileEmulation', mobileEmulation)
     options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])
     driver = webdriver.Chrome(chrome_options=options)
     return driver
 
 
+# def browser():
+#     WIDTH = 360
+#     HEIGHT = 640
+#     PIXEL_RATIO = 3.0
+#     UA = 'Mozilla/5.0 (Linux; U; Android 4.3; en-us; SM-N900T Build/JSS15J) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'
+#     options = webdriver.ChromeOptions()
+#     mobileEmulation = {"deviceMetrics": {"width": WIDTH, "height": HEIGHT, "pixelRatio": PIXEL_RATIO}, "userAgent": UA}
+#     options.add_experimental_option('mobileEmulation', mobileEmulation)
+#     options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])
+#     driver = webdriver.Chrome(chrome_options=options)
+#     return driver
 driver = browser()
 driver.get("http://mtest.xiaomicache.com/")
+
+# driver.find_element_by_class_name('logo-ssq').click()
 try:
-    time.sleep(3)
-    driver.find_element(By.CLASS_NAME, "logo-rxj").click()
+    driver.find_element_by_class_name('logo-ssq').click()
+    # time.sleep(3)
+    # driver.find_element(By.CLASS_NAME, "logo-rxj").click()
     # driver.find_element(By.CSS_SELECTOR, '[ontap="togoucai(\'shopmicai/shoppage/ctzc/sfcr9.html\')"]').click()
 except se.NoSuchElementException as nse:
     print(nse)
@@ -40,10 +56,10 @@ except se.WebDriverException as we:
     # action.perform()
 
     # driver.find_element_by_tag_name('body').send_keys(Keys.SPACE)
-    driver.find_element(By.CLASS_NAME, "logo-rxj").click()
+    # driver.find_element(By.CLASS_NAME, "logo-rxj").click()
     # driver.find_element(By.CSS_SELECTOR, '[ontap="togoucai(\'shopmicai/shoppage/ctzc/sfcr9.html\')"]').click()
 
 
 finally:
-    time.sleep(10)
+    time.sleep(150)
     driver.quit()
