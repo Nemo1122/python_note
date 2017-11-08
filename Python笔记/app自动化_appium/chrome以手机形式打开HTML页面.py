@@ -30,7 +30,10 @@ def browser():
 #     driver = webdriver.Chrome(chrome_options=options)
 #     return driver
 driver = browser()
-driver.get("http://mtest.xiaomicache.com/")
+# 测试
+# driver.get("http://m.xiaomicache.com/")
+# 生产
+driver.get("http://m.xiaomicp.com/")
 
 # driver.find_element_by_class_name('logo-ssq').click()
 try:
@@ -61,5 +64,5 @@ except se.WebDriverException as we:
 
 
 finally:
-    time.sleep(150)
+    time.sleep(10)
     driver.quit()
