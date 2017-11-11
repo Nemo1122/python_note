@@ -7,10 +7,20 @@ sheet = excel.sheet_by_index(0)
 # 从excel中获取数据并组成一个list
 s = []
 for n_row in range(sheet.nrows):
-    s += sheet.row_values(n_row)
-# 去掉其中的空字符
-s = [i for i in s if i]
+    # 去掉其中的空字符
+    s.append([i for i in sheet.row_values(n_row) if i])
 
+ls = []
+for sx in s:
+    ls.append(len(sx))
+
+for i in range(min(ls)):
+    pass
+
+# 思路：由于班级人数不一致，以人数最少的班级为准，当组数小于最少的班级人数时，就每个班随机取一个，组成一个组。
+# 超出的其他班级，集中在一起，随机取3个作为一组，当最后剩余的人数少于3时，就讲人随机安排到前面的几组中。
+# 要实现输入每组人数，但是有个问题是如果组数与班级数不匹配，就不能一个个的取了，有点麻烦。
+print(min(ls))
 # 确定循环次数
 len_s = len(s)
 if len(s) % 3 == 0:
@@ -32,17 +42,3 @@ for i in range(count):
 # print(s_end)
 for i in s_end:
     print(i)
-# print(len(s_end))
-
-# 新建一个excel对象
-wb = xlwt.Workbook()
-
-# 新建一个名为text的sheet页
-sh = wb.add_sheet("test")
-# 前两个参数为单元格位置
-for i in range(len(s_end)):
-    for j in range(len(s_end[i])):
-        sh.write(i, j, s_end[i][j])
-
-# 目前只能保存成xls后缀
-wb.save("data.xls")
