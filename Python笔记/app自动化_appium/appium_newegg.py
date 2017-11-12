@@ -13,6 +13,7 @@ desired_capabilities = {
 }
 
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_capabilities)
+driver.swipe()
 try:
     driver.find_element_by_id('android:id/button2')
 except NoSuchElementException:
