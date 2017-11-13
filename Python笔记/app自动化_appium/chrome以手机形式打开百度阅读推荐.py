@@ -6,6 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 
+
 def browser():
     """默认以设备Galaxy S5机型的方式打开浏览器，主要用于chrome模拟手机上的H5页面"""
     mobileEmulation = {'deviceName': 'Galaxy Note 3'}
@@ -27,5 +28,6 @@ driver.find_element_by_css_selector('.huanyihuan').click()
 driver.find_element_by_css_selector('.c-see-more-button').click()
 
 sleep(5)
+
 
 driver.quit()

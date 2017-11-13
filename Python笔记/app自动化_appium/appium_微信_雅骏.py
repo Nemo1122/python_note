@@ -21,7 +21,7 @@ driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_capabilities)
 sleep(5)
 
 # 点击雅骏
-driver.find_element_by_id('com.tencent.mm:id/ak1').click()
+driver.find_elements_by_id('com.tencent.mm:id/ajz')[2].click()
 
 sleep(0.5)
 
@@ -35,5 +35,8 @@ driver.find_element_by_accessibility_id('历史维修单').click()
 
 con = driver.contexts
 print(con)
+
+sleep(5)
+driver.quit()
 
 # driver.switch_to.context(con[2])

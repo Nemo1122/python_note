@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from time import sleep
+from selenium.webdriver.common.keys import Keys
 
 
 driver = webdriver.Chrome()
@@ -20,6 +21,7 @@ action.perform()
 
 # 找到展示出来的元素，点击
 # driver.find_element_by_xpath("//a[contains(.,'电视配件')]").click()
-driver.find_element_by_link_text('电视配件').click()
+driver.find_element_by_link_text('电视配件').rect
 sleep(10)
 driver.quit()
+

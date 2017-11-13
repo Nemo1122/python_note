@@ -56,24 +56,24 @@ def slide(direction):
         start_x = int(size['width'] * 0.75)
         start_y = int(size['height'] * 0.5)
         end_x = int(size['width'] * 0.25)
-        end_y = int(size['height'] * 0.5)
+        end_y = start_y
     elif direction == 'right':
         # 从左往右滑动,相当于向左翻页      y轴保持不变 x结束点大于x开始点
         start_x = int(size['width'] * 0.25)
         start_y = int(size['height'] * 0.5)
         end_x = int(size['width'] * 0.75)
-        end_y = int(size['height'] * 0.5)
+        end_y = start_y
     elif direction == 'up':
         # 从下往上滑动,相当于向上翻页      x轴保持不变 y开始点大于y结束点
         start_x = int(size['width'] * 0.5)
         start_y = int(size['height'] * 0.75)
-        end_x = int(size['width'] * 0.5)
+        end_x = start_x
         end_y = int(size['height'] * 0.25)
     elif direction == 'down':
         # 从下往上滑动,相当于向上翻页      x轴保持不变 y结束点大于y开始点
         start_x = int(size['width'] * 0.5)
         start_y = int(size['height'] * 0.25)
-        end_x = int(size['width'] * 0.5)
+        end_x = start_x
         end_y = int(size['height'] * 0.75)
     else:
         raise ValueError('请输入left, right, up, down等方向！')
@@ -81,8 +81,5 @@ def slide(direction):
     driver.swipe(start_x, start_y, end_x, end_y)
 
 
-
-
 # driver.flick()
-driver.tap()
 
