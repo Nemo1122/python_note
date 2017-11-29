@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.common import exceptions as Error
-from python_base.内置模块.log2_ import Log
+# from python_base.内置模块.log2_ import Log
 import time
 # import logging
 # import logging.handlers
@@ -16,14 +16,14 @@ driver.get("http://localhost/ecshop")
 
 driver.maximize_window()
 driver.implicitly_wait(30)
-log = Log()
-log('x', '打开浏览器')
+#log = Log()
+#log('x', '打开浏览器')
 
-# driver.find_element(By.NAME, "username").send_keys("nemo")
+# driver.find_elements(By.NAME, "username").send_keys("nemo")
 # driver.find_element(By.NAME, "password").send_keys("nemo1985")
 # driver.find_element(By.CSS_SELECTOR, ".button").click()
 
-log('i', '登录')
+#log('i', '登录')
 try:
     driver.find_element_by_link_text("登录").click()
 except Exception as e:

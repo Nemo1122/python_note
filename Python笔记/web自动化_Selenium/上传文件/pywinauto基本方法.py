@@ -9,7 +9,7 @@ app = application.Application()
 
 # 连接要操作的Windows窗口，可以使用autoitv3工具查看，也可以使用spy++lite工具来查看
 # 这里用的class而没有加窗口title，主要为了保证兼容性
-app.connect(class_name='#32770', handle=0x00000000000D11CC)
+app.connect(class_name='#32770')
 
 # 在输入框中输入值
 app["Dialog"]["Edit1"].TypeKeys(r"e:\jd1.jpg")

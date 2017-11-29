@@ -10,7 +10,7 @@ class MyTest(unittest.TestCase):
     def test_case_first(self):
         """第一个测试"""
         print('我是第一个测试用例')
-        self.assertEqual('x', 'y', '测试不通过')
+        # self.assertEqual('x', 'y', '测试不通过')
 
     def test_case_second(self):
         print('我是第二个测试用例')

@@ -27,7 +27,7 @@ driver.find_element_by_css_selector('.huanyihuan').click()
 
 driver.find_element_by_css_selector('.c-see-more-button').click()
 
-sleep(5)
+sleep(25)
 
 
 driver.quit()

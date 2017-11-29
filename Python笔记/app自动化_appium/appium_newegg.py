@@ -18,7 +18,7 @@ desired_capabilities = {
     # 以Unicode发送字符，才能通过send_keys发送中文
     'unicodeKeyboard': True,
     # 关闭系统软键盘，否则影响输入
-    'resetKeyboard' : True,
+    'resetKeyboard' : True
     # 4.4以下系统用Selendroid
     # 'automationName': 'Selendroid'
 }
@@ -56,4 +56,6 @@ driver.find_element_by_id('com.neweggcn.app:id/btn_login').click()
 sleep(5)
 driver.quit()
 
+# driver.find_element_by_id('com.neweggcn.app:id/login_remember').is_selected()
+driver.save_screenshot()
 

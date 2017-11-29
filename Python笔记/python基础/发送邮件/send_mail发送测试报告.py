@@ -21,8 +21,9 @@ def send_mail(report):
     file.close()
     # 组装邮件内容
     msg = MIMEText(mail_body, 'html', 'utf-8')
-    msg['Subject'] = Header(smtp_dict["subject"], 'utf-8')
     msg['From'] = smtp_dict["send_user"]
+    msg['Subject'] = Header(smtp_dict["subject"], 'utf-8')
+
     # 发送邮件
     try:
         smtp = smtplib.SMTP()
