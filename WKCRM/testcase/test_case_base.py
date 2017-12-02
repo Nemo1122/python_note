@@ -8,7 +8,7 @@ class MyTest(unittest.TestCase):
 
     driver = browser()
     # 请更换为你自己的账号密码
-    login_data = ("nemo", "nemo1985")
+    login_data = ("nemo", "password")
 
     @classmethod
     def setUpClass(cls):
