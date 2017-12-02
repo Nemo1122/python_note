@@ -1,6 +1,6 @@
 import unittest
+from HTMLTestRunner import HTMLTestRunner
 
-from python基础.unittest测试框架.case.最简单的框架代码 import MyTest
 #
 # # 实例化测试套件TestSuite
 # suite = unittest.TestSuite()
@@ -13,4 +13,12 @@ from python基础.unittest测试框架.case.最简单的框架代码 import MyTe
 # runner.run(suite)
 
 
-discover = unittest.defaultTestLoader.discover('')
+discover = unittest.defaultTestLoader.discover('./case', '*.py')
+
+with open('./report.html', 'wb') as f:
+    run = HTMLTestRunner(stream=f,
+                         title='学习测试框架',
+                         description='unittest, discover, html报告'
+    )
+
+    run.run(discover)

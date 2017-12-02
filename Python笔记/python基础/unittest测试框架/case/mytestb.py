@@ -1,7 +1,7 @@
 import unittest
 
 
-class MyTest(unittest.TestCase):
+class MyTestB(unittest.TestCase):
     """测试"""
 
     def setUp(self):
@@ -9,11 +9,11 @@ class MyTest(unittest.TestCase):
 
     def test_case_first(self):
         """第一个测试"""
-        print('我是第一个测试用例')
+        print('我是测试B中的第一个测试用例')
         # self.assertEqual('x', 'y', '测试不通过')
 
     def test_case_second(self):
-        print('我是第二个测试用例')
+        print('我是测试B中的第二个测试用例')
 
     def tearDown(self):
         print('清理，每个用例执行之后都会执行')

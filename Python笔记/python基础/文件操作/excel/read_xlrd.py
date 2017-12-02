@@ -2,7 +2,7 @@ import xlrd, os
 
 
 # 打开一个excel
-data = xlrd.open_workbook(file)
+data = xlrd.open_workbook('E:/data.xlsx')
 
 #通过sheet名称打开
 #table = data.sheet_by_name("login")
