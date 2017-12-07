@@ -10,7 +10,7 @@ s = []
 for n_row in range(sheet.nrows):
     # 去掉其中的空字符
     s.append([i for i in sheet.row_values(n_row) if i])
-
+# print(s)
 ls = []
 for sx in s:
     ls.append(len(sx))
@@ -28,9 +28,10 @@ for i in range(min(ls)):
     s_end.append(s_t)
 # 处理剩余的人
 s = [ii for i in s for ii in i if s]
+# print(s)
 # 如果人数是3的倍数，直接按3人分组
 if len(s) % 3 == 0:
-    for si in s:
+    for i in range(len(s)//3):
         si = random.sample(s, 3)
         for i in si:
             s.remove(i)
@@ -38,7 +39,7 @@ if len(s) % 3 == 0:
 # 如果人数不是3的倍数，
 else:
     while len(s) >= 3:
-        for si in s:
+        for i in range(len(s) // 3):
             si = random.sample(s, 3)
             for i in si:
                 s.remove(i)
@@ -48,6 +49,9 @@ else:
             s_end[i].append(s[i])
 # 最后再将组打乱
 random.shuffle(s_end)
+for i in s_end:
+    print(i)
+print(len(s_end))
 
 # 写入文件
 # 新建一个excel对象

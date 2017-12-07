@@ -2,11 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 
 
-
 # r = requests.get("http://m.weather.com.cn/data/101010100.html")
 # print(r.content)
 
-r = requests.get("http://ws.webxml.com.cn/WebServices/WeatherWS.asmx")
+# r = requests.get("http://ws.webxml.com.cn/WebServices/WeatherWS.asmx")
 # print(r.text)
 
 # bs = BeautifulSoup(r.text, "lxml")
@@ -32,8 +31,6 @@ the_region_code = {"theRegionCode":31123}
 # r = requests.post("http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getSupportCityString", data=the_region_code)
 # print(r.text)
 
-
-
 # 以post方式获取天气预报
 # the_city_code = {"theCityCode": "1117", "theUserID":""}
 # the_city_code_post_url = "http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather"
@@ -41,7 +38,7 @@ the_region_code = {"theRegionCode":31123}
 # print(r.text)
 
 # 以get方式获取天气预报
-the_city_code_get_url = "http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather " \
+the_city_code_get_url = "http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getWeather" \
                         "?theCityCode=1117&theUserID="
 r = requests.get(the_city_code_get_url)
 bs = BeautifulSoup(r.text, 'lxml')
