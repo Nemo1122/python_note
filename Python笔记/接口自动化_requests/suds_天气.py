@@ -44,9 +44,9 @@ def get_method_args(client, method_name):
 
 # "四川,31123","成都,1117"
 
-request = client.service.getSupportCityString("31123")
-print(request.string)
-for s in request.string:
-    print(s)
+request = client.service.getWeather("")
+print(request)
+# for s in request.string:
+#     print(s)
 
 
