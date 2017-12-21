@@ -1,0 +1,29 @@
+/* 主要内容居中 */
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 分值靠右显示 */
+.panel-heading .score-right {
+    display: inline;
+    float: right;
+}
+
+/* 题目类型与文字稍微分开 */
+.panel-heading .serial-number {
+    margin-right: 10px;
+}
+
+span.label {
+    margin-left: 10px;
+}
+
+textarea {
+    /* chrome上面板的左边框没有显示，加了1个内间距
+    margin-left: 1px;*/
+    /* 限制只能上下拖动，不能横向拖动 */
+    resize: vertical;
+}

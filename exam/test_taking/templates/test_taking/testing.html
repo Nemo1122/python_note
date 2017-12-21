@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} 考试 {% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-xs-6 col-md-8 col-center-block">
+        {% for t in all_test_list %}
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">
+                    {{ t.course }}
+                    <span class="label label-info">{{ t.q_stage }}</span>
+                </h4>
+            </a>
+            <a href="/test_paper/{{ t.id }}/" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    参加考试
+                </h4>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">
+                    查看成绩
+                </h4>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock content %}
