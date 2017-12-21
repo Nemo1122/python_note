@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {# Load the tag library #}
+    {# 引入Jquery #}
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    {% load bootstrap3 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    {% load staticfiles %}
+    <title>{% block title %}欢迎光临考试站点{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <script type="text/javascript" src="{% static 'js/event.js' %}"></script>
+</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
